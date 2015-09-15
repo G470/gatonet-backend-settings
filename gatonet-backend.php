@@ -167,7 +167,43 @@ class GatonetCustomizer {
      * START THE MAGIC FROM HERE...
      * ----------------------------
      */
+    
+	/**
+	 * Include CSS file for MyPlugin.
+	 
+	 */
+	public function gn_scripts_and_styles(){
+	function myplugin_scripts() {
+	    wp_register_style( 'foo-styles',  plugin_dir_url( __FILE__ ) . 'assets/foo-styles.css' );
+	    wp_enqueue_style( 'foo-styles' );
+	}
+	add_action( 'wp_enqueue_scripts', 'myplugin_scripts' );
+	}
 
+
+    /**
+     *  REMOVE VERSION NUMBERS
+     *  Remove ?ver=x.x from css and js good idea in general...
+     
+     */
+    public function gn_remove_versions(){
+	function remove_cssjs_ver( $src ) {
+	 if( strpos( $src, '?ver=' ) )
+	 $src = remove_query_arg( 'ver', $src );
+	 return $src;
+	}
+	add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
+	add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
+	}
+
+
+
+
+} // Class end
+
+if( is_admin() ){
+    $gatonet_settings_page = new GatonetCustomizer();
+}
 
 
 
@@ -175,18 +211,10 @@ class GatonetCustomizer {
      * Custom login screen 
   
      */
-    public function gn_custom_login()
-    {
+		function gn_custom_login_logo() { 
+		    wp_enqueue_style( 'custom-login', plugin_dir_url( __FILE__ ) . 'assets/css/admin-login.css' );
+		 }
 
-
-		function gn_custom_login_logo() { ?>
-		    <style type="text/css">
-		        body.login div#login h1 a {
-		            background-image: url(<?php echo get_bloginfo( 'template_directory' ) ?>/img/logo-login.png);
-		            padding-bottom: 30px;
-		        }
-		    </style>
-		<?php }
 
 		add_action( 'login_enqueue_scripts', 'gn_custom_login_logo' );
 
@@ -199,36 +227,10 @@ class GatonetCustomizer {
 
 		// title
 		function gn_custom_login_logo_url_title() {
-		    return get_bloginfo( 'blogname' );
+		    return get_bloginfo( 'blogname' )."BOOOOM";
 		}
 
 		add_filter( 'login_headertitle', 'gn_custom_login_logo_url_title' );
-
-    }
-
-
-    /**
-     *  REMOVE VERSION NUMBERS
-     *  Remove ?ver=x.x from css and js good idea in general...
-     
-     */
-	function remove_cssjs_ver( $src ) {
-	 if( strpos( $src, '?ver=' ) )
-	 $src = remove_query_arg( 'ver', $src );
-	 return $src;
-	}
-	add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
-	add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
-
-
-
-
-
-} // Class end
-
-if( is_admin() ){
-    $gatonet_settings_page = new GatonetCustomizer();
-}
 
 
 
