@@ -1,6 +1,13 @@
 html {
  /*   background: #363B3F !important; */
     font-family: "Roboto", sans-serif !important;
+    /* background: #092756; */
+    background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #090909 0%, #565656 100%);
+    /* background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg, #090909 0%,#565656 100%); */
+    background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg, #090909 0%,#565656 100%);
+    background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg, #090909 0%,#565656 100%);
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(150, 150, 150, 0) 40%), linear-gradient(to bottom, rgba(7,13,29,.25) 0%,rgba(22,10,17,.4) 100%), linear-gradient(135deg, #5B656A 0%,#565656 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
 }
 #adminmenu div.wp-menu-image {
     float: left;
@@ -9,7 +16,7 @@ html {
     text-align: center;
     border: 1px solid #999;
     border-radius: 28px;
-    margin: 0 10px;
+    margin: 10px;
 }
 div.dashicons, div.dashicons-before:before {
     display: inline-block;
@@ -29,19 +36,19 @@ div.dashicons, div.dashicons-before:before {
     -moz-osx-font-smoothing: grayscale;
 }
 .wrap>h1, h2 {
-    color: #CFCFCF !important;
-    font-size: 1.5em;
+    color: #7B7D82 !important;
+    font-size: 2.5em;
     margin: .83em 0;
-    font-weight: 400;
-        font-family: "Roboto", sans-serif !important;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif !important;
 
 }
 h3 {
     color: #CFCFCF !important;
     font-size: 1.3em;
     margin: 1em 0;
-        font-family: "Roboto", sans-serif !important;
-
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 300;
 }
 #wp-admin-bar-wp-logo a{display: none !important;}
 
@@ -74,11 +81,15 @@ margin:0
 
 #adminmenu,#adminmenu .wp-submenu,#adminmenuback,#adminmenuwrap,/* Sub Menu */
 #adminmenu .wp-has-current-submenu .wp-submenu,#adminmenu .wp-has-current-submenu .wp-submenu.sub-open,#adminmenu .wp-has-current-submenu.opensub .wp-submenu,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,.no-js li.wp-has-current-submenu:hover .wp-submenu {
-background:#f5f5f5
+background:rgb(86, 88, 92);
 }
-
+#adminmenu{
+    background:#3E3F42;
+}
 #adminmenuwrap{ padding-top:180px; width: 230px}
-
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
+    width: 230px;
+}
 #wpcontent, #wpfooter{margin-left: 230px;}
 
 #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,#adminmenu .wp-menu-arrow,#adminmenu .wp-menu-arrow div,#adminmenu li.current a.menu-top,#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,.folded #adminmenu li.current.menu-top,.folded #adminmenu li.wp-has-current-submenu,/* Hover actions */
@@ -118,13 +129,19 @@ display:none
 }
 
 #adminmenu li.menu-top {
-border-bottom:1px solid #e4e4e4
+border-bottom:1px solid #454B51
 }
 
 #adminmenu div.wp-menu-name {
-color:#666
+color:#C1C1C1
 }
-
+#adminmenu .wp-submenu-head, #adminmenu a.menu-top {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 34px;
+    padding: 0;
+    text-transform: uppercase;
+}
 .wrap h2 {
 font-size:34px;
 font-weight:100;
@@ -158,13 +175,19 @@ box-shadow:none
 }
 
 .postbox {
-border:1px solid #e1e1e1
+    border: 1px solid #34373A;
+    background: #3E3F42;
+
 }
 
 .menu.ui-sortable .menu-item-handle,.meta-box-sortables.ui-sortable .hndle {
-background:#f5f5f5
+background:#3E3F42
 }
 
+.postbox .hndle, .stuffbox .hndle {
+    border-bottom: 1px solid #454B51;
+    user-select: none;
+}
 #major-publishing-actions {
 background:#FFF;
 padding:0
@@ -264,7 +287,7 @@ padding-top:46px!important
 }
 
 #wpadminbar {
-background:#999999;
+background:#3E3F42;
 height:auto
 }
 
@@ -331,7 +354,7 @@ padding:6px 4px 0 0
 }
 
 #adminmenu .wp-submenu,#adminmenu .wp-has-current-submenu .wp-submenu {
-background:#FFF!important
+background:#38393D!important
 }
 
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
