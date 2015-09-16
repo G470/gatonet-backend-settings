@@ -2,6 +2,32 @@ html {
  /*   background: #363B3F !important; */
     font-family: "Roboto", sans-serif !important;
 }
+#adminmenu div.wp-menu-image {
+    float: left;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    border: 1px solid #999;
+    border-radius: 28px;
+    margin: 0 10px;
+}
+div.dashicons, div.dashicons-before:before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+    line-height: 1;
+    font-family: dashicons;
+    text-decoration: inherit;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: top;
+    text-align: center;
+    -webkit-transition: color .1s ease-in 0;
+    transition: color .1s ease-in 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 .wrap>h1, h2 {
     color: #CFCFCF !important;
     font-size: 1.5em;
@@ -50,6 +76,10 @@ margin:0
 #adminmenu .wp-has-current-submenu .wp-submenu,#adminmenu .wp-has-current-submenu .wp-submenu.sub-open,#adminmenu .wp-has-current-submenu.opensub .wp-submenu,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,.no-js li.wp-has-current-submenu:hover .wp-submenu {
 background:#f5f5f5
 }
+
+#adminmenuwrap{ padding-top:180px; width: 230px}
+
+#wpcontent, #wpfooter{margin-left: 230px;}
 
 #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,#adminmenu .wp-menu-arrow,#adminmenu .wp-menu-arrow div,#adminmenu li.current a.menu-top,#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,.folded #adminmenu li.current.menu-top,.folded #adminmenu li.wp-has-current-submenu,/* Hover actions */
 #adminmenu li.menu-top:hover,#adminmenu li.opensub>a.menu-top,#adminmenu li>a.menu-top:focus {
