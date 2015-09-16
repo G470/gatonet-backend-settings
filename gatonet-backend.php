@@ -194,6 +194,7 @@ class GatonetCustomizer {
 	}
 	add_filter( 'style_loader_src', 'remove_cssjs_ver', 10, 2 );
 	add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
+
 	}
 
 
@@ -233,7 +234,29 @@ if( is_admin() ){
 		add_filter( 'login_headertitle', 'gn_custom_login_logo_url_title' );
 
 
+/**
+ * Remove all version numbers
+ 
+ */
+function gn_remove_version() {
+return '';
+}
+add_filter('the_generator', 'gn_remove_version');
 
+
+
+
+
+/**
+ * Include Admin CSS
+ 
+ */
+function gn_custom_css() {
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,500', false ); 
+	wp_enqueue_style( 'custom-login', plugin_dir_url( __FILE__ ) . 'assets/css/admin-styles.css' );
+}
+
+add_action('admin_head', 'gn_custom_css');
 
 
 
